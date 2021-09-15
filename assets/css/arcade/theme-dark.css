@@ -10,6 +10,21 @@
     src: url("../../fonts/arcade/arcade-webfont.woff") format("woff"),
          url("../../fonts/arcade/arcade-webfont.woff2") format("woff2"); }
 
+@font-face {
+font-family: "Stereofidelic";
+src: url("../../fonts/stereofidelic/stereofidelic-webfont.woff") format("woff"),
+      url("../../fonts/stereofidelic/stereofidelic-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Dogica Pixel";
+  src: url("../../fonts/dogica/dogicapixel-webfont.woff") format("woff"),
+        url("../../fonts/dogica/dogicapixel-webfont.woff2") format("woff2"); }
+
+@font-face {
+  font-family: "Dogica Pixel Bold";
+  src: url("../../fonts/dogica/dogicapixelbold-webfont.woff") format("woff"),
+        url("../../fonts/dogica/dogicapixelbold-webfont.woff2") format("woff2"); }
+
 *,
 *::before,
 *::after {
@@ -26,7 +41,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Dogica Pixel", sans-serif;
   font-weight: 400;
   line-height: 1.4;
   color: #F3EFF5;
@@ -150,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: calc(100vh - 72px);
+  height: 100vh;
   width: 160px;
   overflow-y: auto;
   background-color: #141414;
@@ -181,16 +196,6 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 0;
   margin-bottom: 0; }
 
-.side-nav__header {
-  position: relative;
-  text-transform: capitalize;
-  padding: 1rem 0;
-  line-height: 1.2;
-  color: #31CB00;
-  font-size: 1.4rem; }
-    .side-nav__header:not(:first-child) {
-      padding-top: 20px; }
-
 .side-nav__text {
   display: inline-block;
   vertical-align: middle;
@@ -213,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   white-space: nowrap;
   color: #F3EFF5;
-  font-size: 14px;
+  font-size: 12px;
   transition: all 0.3s ease; }
     .side-nav__link .icon,
     .side-nav__link i {
@@ -224,10 +229,59 @@ h1, h2, h3, h4, h5, h6 {
 
 /** Site Content **/
 
-.techtiles {
-  background-image: url(../../images/bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; }
+
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+.grid-bg {
+  background: url(../../images/gridme.png) repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse .92s infinite; /* Safari 4+ */
+  -moz-animation:    bg-scrolling-reverse .92s infinite; /* Fx 5+ */
+  -o-animation:      bg-scrolling-reverse .92s infinite; /* Opera 12+ */
+  animation:         bg-scrolling-reverse .92s infinite; /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function:    linear;
+  -o-animation-timing-function:      linear;
+  animation-timing-function:         linear;
+  
+  &::before {
+    content: "INFINITY";
+
+    font-size: 8rem;
+    font-weight: 100;
+    font-style: normal;
+  } }
+
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+
+/* Animations */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% { background-position: 50px 50px; }
+}
+@-moz-keyframes    bg-scrolling-reverse {
+  100% { background-position: 50px 50px; }
+}
+@-o-keyframes      bg-scrolling-reverse {
+  100% { background-position: 50px 50px; }
+}
+@keyframes         bg-scrolling-reverse {
+  100% { background-position: 50px 50px; }
+}
+
+@-webkit-keyframes bg-scrolling {
+  0% { background-position: 50px 50px; }
+}
+@-moz-keyframes    bg-scrolling {
+  0% { background-position: 50px 50px; }
+}
+@-o-keyframes      bg-scrolling {
+  0% { background-position: 50px 50px; }
+}
+@keyframes         bg-scrolling {
+  0% { background-position: 50px 50px; }
+}
+
+/** /css bg animation  **/
 
 .content-wrapper {
   -ms-flex: 1 1 auto;
@@ -242,29 +296,59 @@ h1, h2, h3, h4, h5, h6 {
       .content-wrapper {
         transition: none; } }
 
-.content {
-  padding: 4.4rem 3.2rem; }
-
 .page-header {
-  position: relative;
-  margin-bottom: 3rem; }
+  padding-top: 200px }
     .page-title {
       font-family: 'Arcade', sans-serif;
-      color:#fff }
+      font-size: 5rem;
+      color:#000;
+      animation: arcadetext 1.5s ease-in-out infinite alternate; }
 
-.arcade-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size:120px;
-  letter-spacing:0.1em;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: white;
-  text-shadow: 
-            8px 8px #ff1f8f,
-            20px 20px #000000;
+@keyframes arcadetext {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #31CB00,
+      0 0 70px #31CB00, 0 0 80px #31CB00, 0 0 100px #31CB00, 0 0 150px #31CB00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #31CB00,
+      0 0 35px #31CB00, 0 0 40px #31CB00, 0 0 50px #31CB00, 0 0 75px #31CB00;
+  }
+}
+
+.cabinet-header {
+  padding: 0;
+  border-bottom:0;
+  height: 100px;
+  display:flex; 
+  flex-wrap: nowrap; }
+  .arcade-title {
+    text-align: center;
+    font-family: "Stereofidelic";
+    font-size: 48px;
+    line-height: 1;
+    color: #000;
+    background-color:#31CB00;
+    width: 60%; }
+    .title-shadow {
+      width: 40%;
+      background-color:green;
+    }
+
+.cabinet-body {
+  text-align: center;
+  padding:0;
+  background-color: green
+}
+.portfolio-preview-img:hover {
+  box-shadow: 0 0 15px 15px white;
+}
+.portfolio-preview-img {
+  width: 140px;
+  background-color: green;
+}
+
+.cabinet-overlap {
+  margin-top: -150px;
 }
 
 .footer {

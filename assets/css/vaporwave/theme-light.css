@@ -259,12 +259,11 @@ transition: all 0.2s ease; }
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center; 
-	height: calc(100vh - 72px - 44px);
+	height: calc(100vh - 44px);
 	width: 100%; }
 	@media (max-width: 575.98px) {
 		.homepage {
-			background-image: url(../../images/vaporwave-mobile.jpg);
-			height: calc(100vh - 55px - 44px); } }
+			background-image: url(../../images/vaporwave-mobile.jpg); } }
 
 .page-header {
 position: relative;
