@@ -366,17 +366,19 @@ h1, h2, h3, h4, h5, h6 {
       box-shadow: 0 0 15px 15px white; 
     }
 
-
 .cabinet-footer {
   padding: 0;
   border-top:0;
   height: 300px;
   display:flex; 
   flex-wrap: nowrap; }
-
-.cabinet-overlap {
-  margin-top: -150px;
-}
+  .cabinet-footerL {
+    background-color: #31CB00;
+    width: 60%; }
+    .cabinet-footerR {
+      background-color: green;
+      width: 40%
+    }
 
 .footer {
   background-color: #000;
