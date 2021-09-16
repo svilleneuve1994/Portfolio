@@ -229,6 +229,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /** Site Content **/
 
+.home-content {
+  height: 100vh;
+  text-align: center; }
+
 
 /* Cool infinite background scrolling animation.
  * Twitter: @kootoopas
@@ -300,9 +304,15 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 200px }
     .page-title {
       font-family: 'Arcade', sans-serif;
-      font-size: 5rem;
+      font-size: 2rem;
       color:#000;
       animation: arcadetext 1.5s ease-in-out infinite alternate; }
+      @media (min-width: 768px) {
+        .page-title {
+          font-size: 3rem; } }
+      @media (min-width: 992px) {
+        .page-title {
+          font-size: 5rem; } }
 
 @keyframes arcadetext {
   from {
@@ -313,6 +323,17 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #31CB00,
       0 0 35px #31CB00, 0 0 40px #31CB00, 0 0 50px #31CB00, 0 0 75px #31CB00;
   }
+}
+
+.arcade-floor {
+  padding-top: 100px;
+}
+
+
+.card-cabinet {
+  border: none;
+  width: 275px;
+  margin-top: -100px;
 }
 
 .cabinet-header {
@@ -337,15 +358,21 @@ h1, h2, h3, h4, h5, h6 {
 .cabinet-body {
   text-align: center;
   padding:0;
-  background-color: green
-}
-.portfolio-preview-img:hover {
-  box-shadow: 0 0 15px 15px white;
-}
-.portfolio-preview-img {
-  width: 140px;
-  background-color: green;
-}
+  background-color: green }
+  .portfolio-preview-img {
+    width: 140px;
+    background-color: green; }
+    .portfolio-preview-img:hover {
+      box-shadow: 0 0 15px 15px white; 
+    }
+
+
+.cabinet-footer {
+  padding: 0;
+  border-top:0;
+  height: 300px;
+  display:flex; 
+  flex-wrap: nowrap; }
 
 .cabinet-overlap {
   margin-top: -150px;
