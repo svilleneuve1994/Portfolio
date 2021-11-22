@@ -1,4 +1,6 @@
-## Portfolio
-## Under Construction
+# Portfolio
 
-## ![](./assets/images/desktop-preview.png)
+![Portfolio preview image](./assets/images/portfolio-preview.png)
+
+## (Under Construction)
+
